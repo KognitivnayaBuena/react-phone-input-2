@@ -1,15 +1,15 @@
 {
   "name": "kognitivnayabuena-react-phone-input-2",
-  "version": "2.11.0",
+  "version": "2.11.1",
   "description": "A react component to format phone numbers",
   "main": "lib/lib.js",
   "scripts": {
     "test": "jest",
     "start": "TARGET=dev:js NODE_ENV=development webpack-dev-server --progress",
     "start:css": "TARGET=dev:css NODE_ENV=development webpack-dev-server --progress",
-    "build": "npm run build:js && npm run build:css",
-    "build:js": "TARGET=build:js NODE_ENV=production webpack -p --progress",
-    "build:css": "TARGET=build:css NODE_ENV=production webpack -p --progress && rm ./main.js",
+    "build": "cross-env npm run build:js && npm run build:css",
+    "build:js": "cross-env TARGET=build:js NODE_ENV=production webpack -p --progress",
+    "build:css": "cross-env TARGET=build:css NODE_ENV=production webpack -p --progress && rm ./main.js",
     "analyze": "TARGET=analyze NODE_ENV=production webpack -p --progress"
   },
   "repository": {
@@ -83,6 +83,7 @@
   },
   "dependencies": {
     "classnames": "^2.2.6",
+    "cross-env": "^7.0.0",
     "lodash.debounce": "^4.0.8",
     "lodash.memoize": "^4.1.2",
     "lodash.reduce": "^4.6.0",
